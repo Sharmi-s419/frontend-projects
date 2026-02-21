@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=1100"/>
+<title>Clumsy Bird</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── Desktop layout ── -->
+<div id="layout">
+
+  <!-- Left sidebar -->
+  <div id="sidebar-left">
+    <div class="sidebar-logo">
+      CLUMSY<br>BIRD
+      <span>ADVENTURE</span>
+    </div>
+
+    <div class="side-card">
+      <h3>🎮 Controls</h3>
+      <div class="key-row">
+        <span class="key">SPACE</span>
+        <span class="key-desc">Flap wings</span>
+      </div>
+      <div class="key-row">
+        <span class="key">↑</span>
+        <span class="key-desc">Flap wings</span>
+      </div>
+      <div class="key-row">
+        <span class="key">Click</span>
+        <span class="key-desc">Flap wings</span>
+      </div>
+    </div>
+
+    <div class="side-card">
+      <h3>📊 Score</h3>
+      <div class="live-score-box">
+        <div class="live-score-label">Current</div>
+        <div class="live-score-num" id="liveScore">0</div>
+        <div class="live-best-label">BEST</div>
+        <div class="live-best-num" id="liveBest">0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game canvas -->
+  <div id="wrapper">
+    <canvas id="c"></canvas>
+
+    <!-- Start Screen -->
+    <div class="panel visible" id="startPanel">
+      <div class="start-logo">CLUMSY<br>BIRD</div>
+      <div class="start-sub">A Flappy Adventure</div>
+      <canvas id="birdPreview" width="90" height="72" style="margin-top:28px;animation:logoFloat 2.5s ease-in-out infinite"></canvas>
+      <div class="start-hint">PRESS SPACE TO START</div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div class="panel hidden" id="gameOverPanel">
+      <div class="go-card">
+        <div class="go-title">GAME OVER!</div>
+        <div class="score-table">
+          <div class="score-row">
+            <span class="s-label">Score</span>
+            <span class="s-val" id="goScore">0</span>
+          </div>
+          <div class="score-row">
+            <span class="s-label">Best <span class="new-badge" id="newBadge" style="display:none">New!</span></span>
+            <span class="s-val" id="goBest">0</span>
+          </div>
+          <div class="score-row">
+            <span class="s-label">Medal</span>
+            <div>
+              <span class="medal medal-none" id="goMedal">💀</span>
+              <span class="stars">
+                <span class="star" id="st1">⭐</span>
+                <span class="star" id="st2">⭐</span>
+                <span class="star" id="st3">⭐</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-play" id="retryBtn">▶ Play Again</button>
+          <button class="btn btn-share" id="shareBtn">🔗 Share</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right sidebar -->
+  <div id="sidebar-right">
+
+    <div class="side-card medal-showcase">
+      <h3>🏅 Medals</h3>
+      <div class="medal-item">
+        <span class="m-icon">🥇</span>
+        <div class="m-info">
+          <div class="m-name">Gold</div>
+          <div class="m-req">Score 40+</div>
+        </div>
+      </div>
+      <div class="medal-item">
+        <span class="m-icon">🥈</span>
+        <div class="m-info">
+          <div class="m-name">Silver</div>
+          <div class="m-req">Score 20+</div>
+        </div>
+      </div>
+      <div class="medal-item">
+        <span class="m-icon">🥉</span>
+        <div class="m-info">
+          <div class="m-name">Bronze</div>
+          <div class="m-req">Score 5+</div>
+        </div>
+      </div>
+      <div class="medal-item">
+        <span class="m-icon">💀</span>
+        <div class="m-info">
+          <div class="m-name">Nothing</div>
+          <div class="m-req">Score 0–4</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-card tip-card">
+      <h3>💡 Tips</h3>
+      <p>Tap <span class="highlight">early</span> — the bird falls faster than you think!</p>
+      <p>Aim for the <span class="highlight">center</span> of each gap.</p>
+      <p>Stay <span class="highlight">calm</span> and keep a steady rhythm.</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js">
+
+</script>
+</body>
+</html>
