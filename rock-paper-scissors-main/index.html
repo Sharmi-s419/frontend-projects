@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROCK PAPER SCISSORS</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1 class="title">Rock · Paper · Scissors</h1>
+
+  <div class="scoreboard">
+    <div class="score-card you">
+      <div class="score-label">YOU</div>
+      <div class="score-value" id="playerScore">0</div>
+    </div>
+    <div class="vs-badge">VS</div>
+    <div class="score-card cpu">
+      <div class="score-label">CPU</div>
+      <div class="score-value" id="cpuScore">0</div>
+    </div>
+  </div>
+
+  <div class="arena">
+    <div class="arena-side" id="playerArena">
+      <span class="arena-label">YOUR CHOICE</span>
+      <div class="choice-emoji" id="playerEmoji">❓</div>
+      <div class="choice-name" id="playerChoiceName">—</div>
+    </div>
+    <div class="arena-side" id="cpuArena">
+      <span class="arena-label">CPU CHOICE</span>
+      <div class="choice-emoji" id="cpuEmoji">❓</div>
+      <div class="choice-name" id="cpuChoiceName">—</div>
+    </div>
+  </div>
+
+  <div class="result-banner idle" id="resultBanner">CHOOSE YOUR WEAPON</div>
+
+  <div class="choices-section">
+    <div class="choices-label">— SELECT —</div>
+    <div class="choices">
+      <button class="choice-btn rock" onclick="play('rock')">
+        <span class="btn-emoji">🪨</span>
+        <span class="btn-label">Rock</span>
+      </button>
+      <button class="choice-btn paper" onclick="play('paper')">
+        <span class="btn-emoji">📄</span>
+        <span class="btn-label">Paper</span>
+      </button>
+      <button class="choice-btn scissors" onclick="play('scissors')">
+        <span class="btn-emoji">✂️</span>
+        <span class="btn-label">Scissors</span>
+      </button>
+    </div>
+  </div>
+
+  <div style="display:flex; align-items:center; gap:24px;">
+    <div class="rounds" id="roundsPlayed">ROUND 0</div>
+    <button class="reset-btn" onclick="resetGame()">RESET</button>
+  </div>
+</div>
+
+<script src="index.js">
+  
+</script>
+</body>
+</html>
